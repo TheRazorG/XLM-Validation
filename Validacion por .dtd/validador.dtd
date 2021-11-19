@@ -1,0 +1,12 @@
+
+<!ELEMENT musica (disco, (titulo, grupo, año?, single?))>
+<!ELEMENT titulo (formato, idioma?)>
+
+<!ELEMENT formato (cd | vinilo | mp3 | cassette)>
+
+<!ELEMENT formato (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT grupo (#PCDATA)>
+<!ELEMENT año (#PCDATA)>
+<!ELEMENT idioma (#PCDATA)>
+<!ELEMENT single EMPTY>
