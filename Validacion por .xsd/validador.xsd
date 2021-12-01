@@ -1,52 +1,27 @@
-<?xml version="1.0">
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-<xsd:element name="titulo" type="xsd:string"/>
-<xsd:element name="grupo" type="xsd:string"/>
-<xsd:element name="año" type="positiveInteger"/>
-<xsd:element name="single" type="xsd:string"/>
-<xsd:element name="formato" type="xsd:string"/>
-<xsd:element name="idioma" type="xsd:string"/>
-
-
-<xsd:element name="musica">
-  <xsd:complexType>
-    <xsd:sequence>
-    <xsd:element name="disco">
-      <xsd:complexType>
-        <xsd:attribute name="formato" type="xsd:string"></xsd:attribute>
-        <xsd:attribute name="idioma" type="xsd:string"></xsd:attribute>
-        <xsd:sequence>
-          <xsd:element name="titulo" minOcurrs="1" maxOcurrs="unbounded"/>
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:element name="formato" minOcurrs="1" maxOcurrs="1">
-                <xsd:complexType>
-                  <xsd:choice>
-                    <xsd:element name="cd" type="xsd:string"/>
-                    <xsd:element name="vinilo" type="xsd:string"/>
-                    <xsd:element name="mp3" type="xsd:string"/>
-                    <xsd:element name="cassette" type="xsd:string"/>
-                  </xsd:choice>
-                </xsd:complexType>
-              </xsd:element>
-              <xsd:element name="idioma" minOcurrs="0">
-                <xsd:complexType>
-                  <xsd:choice>
-                    <xsd:element name="en" type="xsd:string"/>
-                    <xsd:element name="es" type="xsd:string"/>
-                  </xsd:choice>
-                </xsd:complexType>
-              </xsd:element>
-            </xsd:sequence>
-          </xsd:complexType>
-          <xsd:element ref="grupo"/>
-          <xsd:element ref="año" minOcurrs="0"/>
-          <xsd:element ref="single" minOcurrs="0"/>
-        </xsd:sequence>
-      </xsd:complexType>
-    </xsd:element>    
-    </xsd:sequence>
-  </xsd:complexType>
-</xsd:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="musica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="disco" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="titulo">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="formato" use="optional"/>
+                      <xs:attribute type="xs:string" name="idioma" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="grupo"/>
+              <xs:element type="xs:short" name="año"/>
+              <xs:element type="xs:string" name="single" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

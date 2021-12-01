@@ -1,8 +1,7 @@
-<?xml version="1.0" enconding="utf-8"?>
+<?xml version="1.0"?>
 <musica xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="validador.xsd">
 
-<musica>
-  <disco>
+<disco>
     <titulo formato="cd" idioma="en">Violator</titulo>
     <grupo>Depeche Mode</grupo>
     <año>1990</año>
@@ -28,7 +27,7 @@
   </disco>
 
   <disco>
-    <titul formato="mp3" idioma="es"o>Hacia lo Salvaje</titul>
+    <titulo formato="mp3" idioma="es">Hacia lo Salvaje</titulo>
     <grupo>Amaral</grupo>
     <año>2011</año>
     <single>Hacia lo Salvaje</single>
